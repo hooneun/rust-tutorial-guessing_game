@@ -34,20 +34,12 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
 
-        //let guess: u32 = guess.trim().parse().expect("Please type a number!");
-
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
         };
 
-        //guess = Guess::new(guess).value()
         println!("{}", Guess::new(guess).value());
-
-        //        if guess < 1 || guess > 100 {
-        //            println!("The secret number will be between 1 and 100.");
-        //            continue;
-        //        }
 
         println!("You guessed: {}", guess);
 
